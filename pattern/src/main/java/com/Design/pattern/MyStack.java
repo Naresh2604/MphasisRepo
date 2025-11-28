@@ -1,0 +1,27 @@
+package com.Design.pattern;
+
+import java.util.Scanner;
+
+public class MyStack {
+	private static Node top=null;
+	public static boolean isEmpty() {
+		return top==null;
+	}
+	public static Node createNode() {
+		Scanner sc=new Scanner(System.in);
+		int data=sc.nextInt();
+		return new Node(data);
+	}
+	public static void push() {
+		Node newNode=createNode();
+		if(top==null)
+			top=newNode;
+		else {
+			newNode.setNext(top);
+			top=newNode;
+			System.out.println("node with " +newNode.getData()+"inserted into stack successfully");
+		}
+		
+	}
+     
+}
